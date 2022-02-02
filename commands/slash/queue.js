@@ -141,7 +141,7 @@ const command = new SlashCommand()
               })}\``,
               inline: true,
             },
-                        {
+            {
               name: "Total Tracks Duration",
               value: `\`${pms(player.queue.duration, {
                 colonNotation: true,
