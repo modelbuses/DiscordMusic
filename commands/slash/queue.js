@@ -45,7 +45,7 @@ const command = new SlashCommand()
       let song = player.queue.current;
       const embed = new MessageEmbed()
         .setColor(client.config.embedColor)
-        .setDescription(`**🎶 | Now playing:** [${song.title}](${song.uri})`)
+        .setDescription(`**♪ | Now playing:** [${song.title}](${song.uri})`)
         .addFields(
           {
             name: "Duration",
@@ -76,8 +76,8 @@ const command = new SlashCommand()
         (t, i) => `\` ${++i} \` [${t.title}](${t.uri}) [${t.requester}]`
       );
 
-      const chunk = load.chunk(mapping, 5);
       const pages = chunk.map((s) => s.join("\n"));
+      const chunk = load.chunk(mapping, 5);
       let page = interaction.options.getNumber("page");
       if (!page) page = 0;
       if (page) page = page - 1;
@@ -89,7 +89,7 @@ const command = new SlashCommand()
         const embedTwo = new MessageEmbed()
           .setColor(client.config.embedColor)
           .setDescription(
-            `**🎶 | Now playing:** [${song.title}](${song.uri}) [${player.queue.current.requester}]\n\n**Queued Tracks**\n${pages[page]}`
+            `**♪ | Now playing:** [${song.title}](${song.uri}) [${player.queue.current.requester}]\n\n**Queued Tracks**\n${pages[page]}`
           )
           .addFields(
             {
@@ -141,11 +141,11 @@ const command = new SlashCommand()
               })}\``,
               inline: true,
             },
-            {
+                        {
               name: "Total Tracks Duration",
-              value: `\`${pms(player.position, {
+              value: `\`${pms(player.queue.duration, {
                 colonNotation: true,
-              })} / ${pms(player.queue.duration, { colonNotation: true })}\``,
+              })}\``,
               inline: true,
             },
             {
