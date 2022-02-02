@@ -76,8 +76,8 @@ const command = new SlashCommand()
         (t, i) => `\` ${++i} \` [${t.title}](${t.uri}) [${t.requester}]`
       );
 
-      const pages = chunk.map((s) => s.join("\n"));
       const chunk = load.chunk(mapping, 5);
+      const pages = chunk.map((s) => s.join("\n"));
       let page = interaction.options.getNumber("page");
       if (!page) page = 0;
       if (page) page = page - 1;
@@ -129,7 +129,7 @@ const command = new SlashCommand()
         const embedThree = new MessageEmbed()
           .setColor(client.config.embedColor)
           .setDescription(
-            `**🎶 | Now playing:** [${song.title}](${song.uri}) [${player.queue.current.requester}]\n\n**Queued Tracks**\n${pages[page]}`
+            `**♪ | Now playing:** [${song.title}](${song.uri}) [${player.queue.current.requester}]\n\n**Queued Tracks**\n${pages[page]}`
           )
           .addFields(
             {
@@ -183,7 +183,8 @@ const command = new SlashCommand()
             else
               return b
                 .reply({
-                  content: `**${interaction.user.tag}** can use this button. Run this command again if you want to use this button`,
+                  content: `Only **${interaction.user.tag}** can use this button.`,
+                  ephemeral: true,
                 })
                 .catch(() => {});
           },
@@ -199,7 +200,7 @@ const command = new SlashCommand()
             const embedFour = new MessageEmbed()
               .setColor(client.config.embedColor)
               .setDescription(
-                `**🎶 | Now playing:** [${song.title}](${song.uri}) [${player.queue.current.requester}]\n\n**Queued Tracks**\n${pages[page]}`
+                `**♪ | Now playing:** [${song.title}](${song.uri}) [${player.queue.current.requester}]\n\n**Queued Tracks**\n${pages[page]}`
               )
               .addFields(
                 {
@@ -213,9 +214,7 @@ const command = new SlashCommand()
                 },
                 {
                   name: "Total Tracks Duration",
-                  value: `\`${pms(player.position, {
-                    colonNotation: true,
-                  })} / ${pms(player.queue.duration, {
+                  value: `\`${pms(player.queue.duration, {
                     colonNotation: true,
                   })}\``,
                   inline: true,
@@ -244,7 +243,7 @@ const command = new SlashCommand()
             const embedFive = new MessageEmbed()
               .setColor(client.config.embedColor)
               .setDescription(
-                `**🎶 | Now playing:** [${song.title}](${song.uri}) [${player.queue.current.requester}]\n\n**Queued Tracks**\n${pages[page]}`
+                `**♪ | Now playing:** [${song.title}](${song.uri}) [${player.queue.current.requester}]\n\n**Queued Tracks**\n${pages[page]}`
               )
               .addFields(
                 {
@@ -258,9 +257,7 @@ const command = new SlashCommand()
                 },
                 {
                   name: "Total Tracks Duration",
-                  value: `\`${pms(player.position, {
-                    colonNotation: true,
-                  })} / ${pms(player.queue.duration, {
+                  value: `\`${pms(player.queue.duration, {
                     colonNotation: true,
                   })}\``,
                   inline: true,
