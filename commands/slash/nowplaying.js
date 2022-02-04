@@ -7,6 +7,14 @@ const command = new SlashCommand()
   .setDescription("Shows the current song playing in the voice channel.")
   .setRun(async (client, interaction, options) => {
     const player = interaction.client.manager.players.get(interaction.guild.id);
+
+    if (!player.playing) {
+      const queueEmbed = new MessageEmbed()
+        .setColor(client.config.embedColor)
+        .setDescription("There's nothing playing.");
+      return interaction.reply({ embeds: [queueEmbed], ephemeral: true });
+    }
+
     if (!player) {
       return interaction.reply({
         embeds: [client.ErrorEmbed("**There's nothing playing**")],
