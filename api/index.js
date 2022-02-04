@@ -42,7 +42,7 @@ class Server extends EventEmitter {
         );
       });
     });
-    this.app.use(express.static(join(__dirname, "..", "dashboard", "build")));
+    this.app.use(express.static(join(__dirname, "..", "public")));
     // this.app.use((req, res) => {
     //   res.sendFile(join(__dirname, "..", "dashboard", "build", "index.html"));
     // });

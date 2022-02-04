@@ -1,6 +1,7 @@
 # Why.
 
-Because this is an effort to make the original v5 branch commit history clean. By testing random Shit here and git commiting it to the main v5 branch once all the testing & messy commit is done.
+So that I can test shit here without messing up the original v5 branch.
+Feel free to use this.
 
 also you should read this :)
 https://github.com/torvalds/linux/pull/17
@@ -19,8 +20,8 @@ https://github.com/torvalds/linux/pull/17
 
 ## 🚀 | Deploy
 
-> Deploy button for dev and messy version
+> Deploy for this version
 
-[![Run on Repl.it](https://repl.it/badge/github/DarrenOfficial/DiscordMusic)](https://repl.it/github/DarrenOfficial/DiscordMusic)
-[![Deploy to heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/DarrenOfficial/DiscordMusic)
-[![Open in Gitpod](https://camo.githubusercontent.com/76e60919474807718793857d8eb615e7a50b18b04050577e5a35c19421f260a3/68747470733a2f2f676974706f642e696f2f627574746f6e2f6f70656e2d696e2d676974706f642e737667)](https://gitpod.io/#https://github.com/DarrenOfficial/DiscordMusic)
+[![Run on Repl.it](https://repl.it/badge/github/modelbuses/DiscordMusic)](https://repl.it/github/DarrenOfficial/DiscordMusic)
+[![Deploy to heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/modelbuses/DiscordMusic)
+[![Open in Gitpod](https://camo.githubusercontent.com/76e60919474807718793857d8eb615e7a50b18b04050577e5a35c19421f260a3/68747470733a2f2f676974706f642e696f2f627574746f6e2f6f70656e2d696e2d676974706f642e737667)](https://gitpod.io/#https://github.com/modelbuses/DiscordMusic)
