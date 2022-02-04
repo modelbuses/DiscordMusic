@@ -1,6 +1,6 @@
 # Repository
-[SudhanPlayz](https://github.com/SudhanPlayz/) [https://github.com/SudhanPlayz/Discord-MusicBot/](https://github.com/SudhanPlayz/Discord-MusicBot/)
 
+[SudhanPlayz](https://github.com/SudhanPlayz/) [https://github.com/SudhanPlayz/Discord-MusicBot/](https://github.com/SudhanPlayz/Discord-MusicBot/)
 
 ## 🚀 | Deploy
 
@@ -9,7 +9,6 @@
 [![Run on Repl.it](https://repl.it/badge/github/modelbuses/DiscordMusic)](https://repl.it/github/DarrenOfficial/DiscordMusic)
 [![Deploy to heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/modelbuses/DiscordMusic)
 [![Open in Gitpod](https://camo.githubusercontent.com/76e60919474807718793857d8eb615e7a50b18b04050577e5a35c19421f260a3/68747470733a2f2f676974706f642e696f2f627574746f6e2f6f70656e2d696e2d676974706f642e737667)](https://gitpod.io/#https://github.com/modelbuses/DiscordMusic)
-
 
 # Why.
 
@@ -29,13 +28,12 @@ Usually recived commit & fixes faster.
 > fine for hosting, but the pull requests and the online commit
 > editing, are just pure garbage.
 
-
 # tldr; of what can you do.
 
-* The credits should not be changed.
-* The bot-code should be used for **private hosting** and **personal usage** only.
-* You should not use the bot for any commercial purpose. including but not limited to:
-  * Selling the bot's code.
-  * Putting the bot on listing site such as top.gg. discordbotlist.com. and such.
+- The credits should not be changed.
+- The bot-code should be used for **private hosting** and **personal usage** only.
+- You should not use the bot for any commercial purpose. including but not limited to:
+  - Selling the bot's code.
+  - Putting the bot on listing site such as top.gg. discordbotlist.com. and such.
 
 > **Note:** if you are found to be violating any of the above stated rule you might be asked to takedown your bot, happy listening!! Incase of any doubts in the license contact owner.
