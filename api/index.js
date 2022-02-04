@@ -47,7 +47,6 @@ class Server extends EventEmitter {
     //   res.sendFile(join(__dirname, "..", "dashboard", "build", "index.html"));
     // });
   }
-  
 
   listen() {
     this.app.listen(this.config.port);
