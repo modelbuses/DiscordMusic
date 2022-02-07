@@ -23,9 +23,6 @@ const command = new SlashCommand()
     }
     let query = options.getString("query", true);
     let player = client.createPlayer(interaction.channel, channel);
-    // console.log(player);
-    // console.log("fuck")
-    // console.log(player.state);
     if (player.state !== "CONNECTED") {
       player.connect();
     }
