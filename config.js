@@ -12,15 +12,25 @@ module.exports = {
   disconnectTime: 30000, //How long should the bot wait before disconnecting from the voice channel. in miliseconds. set to 1 for instant disconnect.
   alwaysplay: true, // when set to true music will always play no matter if theres no one in voice channel.
   // Lavalink server; optional public lavalink -> https://lavalink-list.darrennathanael.com/
+  // The default one should work fine, these are picked due to their speed and not using cloudflare.
   nodes: [
     {
-      identifier: "Main",
-      host: "",
-      port: 80,
-      password: "",
-      retryAmount: 5, //- Optional
-      retryDelay: 1000, //- Optional
-      //secure: true //- Optional | Default: false
+      identifier: "Losing time, Montreal.", //- Used for indentifier in stats commands.
+      host: "losingtime.dpaste.org",
+      port: 2124,
+      password: "SleepingOnTrains",
+      retryAmount: 15, //- The amount of times to retry connecting to the node if connection got dropped.
+      retryDelay: 6000, //- Delay between reconnect attempts if connection is lost.
+      secure: false, //- Can be either true or false. Only use true if ssl is enabled!
+    },
+    {
+      identifier: "Racconn, EU.", //- Used for indentifier in stats commands.
+      host: "lavalink.eu",
+      port: 2333,
+      password: "Raccoon",
+      retryAmount: 15, //- The amount of times to retry connecting to the node if connection got dropped.
+      retryDelay: 6000, //- Delay between reconnect attempts if connection is lost.
+      secure: false, //- Can be either true or false. Only use true if ssl is enabled!
     },
   ],
   embedColor: "BLUE", //Color of the embeds, hex supported
