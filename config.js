@@ -36,15 +36,4 @@ module.exports = {
   },
   iconURL:
     "https://github.com/SudhanPlayz/Discord-MusicBot/raw/master/assets/logo.gif", //This icon will be in every embed's author field
-  database: {
-    host: process.env.databaseHost || "localhost",
-    port: process.env.databasePort || 3306,
-    name: process.env.databaseName || "musicbot",
-    user: process.env.databaseUser || "root",
-    password: process.env.databasePassword || "root",
-  },
-  auditlog: {
-    enabled: false,
-    webhooksUrl: process.env.auditlogWebhooksUrl || "",
-  },
 };
