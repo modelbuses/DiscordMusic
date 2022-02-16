@@ -22,6 +22,14 @@ const command = new SlashCommand()
     }
     let query = options.getString("query", true);
     let player = client.createPlayer(interaction.channel, channel);
+    if (!interaction.member.voice.channel) {
+      const joinEmbed = new MessageEmbed()
+        .setColor(client.config.embedColor)
+        .setDescription(
+          "❌ | **You must be in a voice channel to use this command.**"
+        );
+      return interaction.reply({ embeds: [joinEmbed], ephemeral: true });
+    }
     if (player.state !== "CONNECTED") {
       player.connect();
     }
