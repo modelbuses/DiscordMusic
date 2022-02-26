@@ -13,7 +13,7 @@ module.exports = {
   alwaysplay: true, // when set to true music will always play no matter if theres no one in voice channel.
   debug: false, //Debug mode
   // Lavalink server; optional public lavalink -> https://lavalink-list.darrennathanael.com/
-  // The default one should work fine, these are picked due to their speed and not using cloudflare.
+  // The default one should work fine.
   nodes: [
     {
       identifier: "Losing time, Montreal.", //- Used for indentifier in stats commands.
