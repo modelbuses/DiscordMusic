@@ -1,15 +1,11 @@
 const SlashCommand = require("../../lib/SlashCommand");
 
 const command = new SlashCommand()
-  .setName("join")
-  .setDescription("Joins the voice channel")
+  .setName("summon")
+  .setDescription("Summons the bot to the channel.")
   .setRun(async (client, interaction, options) => {
     let channel = await client.getChannel(client, interaction);
     let node = await client.getLavalink(client);
-    if (!node)
-      return interaction.reply({
-        embeds: [client.ErrorEmbed("**Lavalink node not connected**")],
-      });
     if (!interaction.member.voice.channel) {
       const joinEmbed = new MessageEmbed()
         .setColor(client.config.embedColor)
