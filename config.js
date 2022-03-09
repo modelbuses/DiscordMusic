@@ -20,8 +20,8 @@ module.exports = {
       host: "losingtime.dpaste.org",
       port: 2124,
       password: "SleepingOnTrains",
-      retryAmount: 15, //- The amount of times to retry connecting to the node if connection got dropped.
-      retryDelay: 6000, //- Delay between reconnect attempts if connection is lost.
+      retryAmount: 60, //- The amount of times to retry connecting to the node if connection got dropped.
+      retryDelay: 60, //- Delay between reconnect attempts if connection is lost.
       secure: false, //- Can be either true or false. Only use true if ssl is enabled!
     },
   ],
