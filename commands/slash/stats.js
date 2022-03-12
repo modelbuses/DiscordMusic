@@ -13,6 +13,13 @@ const command = new SlashCommand()
 
     // Get nodejs version
     const nodeVersion = process.version;
+    
+    // Get Processor name
+    const processor = os.cpus()[0].model;
+
+    // Get Processor cores
+    const cores = os.cpus().length;
+
 
     // get the uptime in a human readable format
     const runtime = moment
@@ -52,10 +59,10 @@ const command = new SlashCommand()
     }
 
     const statsEmbed = new MessageEmbed()
-      .setTitle(`${client.user.username} Information`)
+      .setTitle(`${client.user.username} Status`)
       .setColor(client.config.embedColor)
       .setDescription(
-        `\`\`\`yml\nName: ${client.user.username}#${client.user.discriminator} [${client.user.id}]\nAPI: ${client.ws.ping}ms\nRuntime: ${runtime}\`\`\``
+        `\`\`\`yml\nName: ${client.user.username}#${client.user.discriminator} [${client.user.id}]\nWS: ${client.ws.ping}ms\nUptime: ${runtime}\`\`\``
       )
       .setFields([
         {
@@ -65,7 +72,7 @@ const command = new SlashCommand()
           } out of ${
             client.manager.nodes.values().next().value.stats.players
           }\`\`\``,
-          inline: true,
+          inline: false,
         },
         {
           name: "Bot stats",
@@ -74,11 +81,11 @@ const command = new SlashCommand()
           } \nNodeJS: ${nodeVersion}\nDiscordMusicBot: v${
             require("../../package.json").version
           } \`\`\``,
-          inline: true,
+          inline: false,
         },
         {
           name: "System stats",
-          value: `\`\`\`yml\nOS: ${osver}\nUptime: ${sysuptime}\n\`\`\``,
+          value: `\`\`\`yml\nPlatform: ${osver}\nUptime: ${sysuptime}\nProcessor: ${processor}\nCore: ${cores} Core(s)\`\`\``,
           inline: false,
         },
       ])

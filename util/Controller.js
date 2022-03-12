@@ -96,37 +96,48 @@ module.exports = async (client, interaction) => {
     player.stop();
     return interaction.deferUpdate();
   }
-
-  if (property === "HighVolume") {
-    // increase volume by 10% else if volume at 200% do nothing
-    if (player.volume < 125) {
-      player.setVolume(player.volume + 5);
-      interaction.reply({
-        embeds: [
-          client.Embed(
-            "🔊 | **Successfully increased server volume to** `" +
-              player.volume +
-              "%`"
-          ),
-        ],
-      });
-      setTimeout(() => {
-        interaction.deleteReply();
-      }, 5000);
-    } else {
-      interaction.reply({
-        embeds: [
-          client.Embed(
-            "👍 | **Volume is at maximum** `" + player.volume + "%`"
-          ),
-        ],
-      });
-      setTimeout(() => {
-        interaction.deleteReply();
-      }, 5000);
-    }
-    return;
+  
+  
+  if (property === "Stop") {
+    player.destroy();
+     interaction.reply({
+      embeds: [
+        client.Embed(`👋 | Disconnected.`),
+      ],
+    });
   }
+
+
+  // if (property === "HighVolume") {
+  //   // increase volume by 10% else if volume at 200% do nothing
+  //   if (player.volume < 125) {
+  //     player.setVolume(player.volume + 5);
+  //     interaction.reply({
+  //       embeds: [
+  //         client.Embed(
+  //           "🔊 | **Successfully increased server volume to** `" +
+  //             player.volume +
+  //             "%`"
+  //         ),
+  //       ],
+  //     });
+  //     setTimeout(() => {
+  //       interaction.deleteReply();
+  //     }, 5000);
+  //   } else {
+  //     interaction.reply({
+  //       embeds: [
+  //         client.Embed(
+  //           "👍 | **Volume is at maximum** `" + player.volume + "%`"
+  //         ),
+  //       ],
+  //     });
+  //     setTimeout(() => {
+  //       interaction.deleteReply();
+  //     }, 5000);
+  //   }
+  //   return;
+  // }
 
   return interaction.reply({
     ephemeral: true,

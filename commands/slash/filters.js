@@ -9,17 +9,17 @@ const command = new SlashCommand()
       .setName("preset")
       .setDescription("the preset to add")
       .setRequired(true)
-      .addChoice("Nightcore", "nightcore")
-      .addChoice("BassBoost", "bassboost")
-      .addChoice("Vaporwave", "vaporwave")
-      .addChoice("Pop", "pop")
-      .addChoice("Soft", "soft")
-      .addChoice("Treblebass", "treblebass")
-      .addChoice("Eight Dimension", "eightD")
-      .addChoice("Karaoke", "karaoke")
-      .addChoice("Vibrato", "vibrato")
-      .addChoice("Tremolo", "tremolo")
-      .addChoice("Reset", "off")
+      .addChoice("nightcore", "nightcore")
+      .addChoice("bassboost", "bassboost")
+      .addChoice("vaporwave", "vaporwave")
+      .addChoice("pop", "pop")
+      .addChoice("soft", "soft")
+      .addChoice("treblebass", "treblebass")
+      .addChoice("8D", "eightD")
+      .addChoice("karaoke", "karaoke")
+      .addChoice("vibrato", "vibrato")
+      .addChoice("tremolo", "tremolo")
+      .addChoice("reset", "off")
   )
 
   .setRun(async (client, interaction, options) => {
@@ -58,7 +58,7 @@ const command = new SlashCommand()
     }
 
     // create a new embed
-    let thing = new MessageEmbed().setColor(client.config.embedColor);
+    let filterEmbed = new MessageEmbed().setColor(client.config.embedColor);
 
     if (args == "nightcore") {
       thing.setDescription("✅ | Nightcore filter is now active!");
@@ -97,7 +97,7 @@ const command = new SlashCommand()
       thing.setDescription("❌ | Invalid filter!");
     }
 
-    return interaction.reply({ embeds: [thing] });
+    return interaction.reply({ embeds: [filterEmbed] });
   });
 
 module.exports = command;

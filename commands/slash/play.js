@@ -82,35 +82,10 @@ const command = new SlashCommand()
         player.play();
       let addQueueEmbed = client
         .Embed()
-        .setAuthor({ name: "Added to queue", iconURL: client.config.iconURL })
-        //.setAuthor("Added to queue", client.config.iconURL) Deprecated soon
         .setDescription(
-          `[${res.tracks[0].title}](${res.tracks[0].uri})` || "No Title"
+          `Enqueued [${res.tracks[0].title}](${res.tracks[0].uri})` || "No Title"
         )
         .setURL(res.tracks[0].uri)
-        .addField("Author", res.tracks[0].author, true)
-        .addField(
-          "Duration",
-          res.tracks[0].isStream
-            ? `\`LIVE\``
-            : `\`${client.ms(res.tracks[0].duration, {
-                colonNotation: true,
-              })}\``,
-          true
-        );
-      try {
-        addQueueEmbed.setThumbnail(
-          res.tracks[0].displayThumbnail("maxresdefault")
-        );
-      } catch (err) {
-        addQueueEmbed.setThumbnail(res.tracks[0].thumbnail);
-      }
-      if (player.queue.totalSize > 1)
-        addQueueEmbed.addField(
-          "Position in queue",
-          `${player.queue.size - 0}`,
-          true
-        );
       return interaction
         .editReply({ embeds: [addQueueEmbed] })
         .catch(this.warn);
@@ -126,21 +101,12 @@ const command = new SlashCommand()
         player.play();
       let playlistEmbed = client
         .Embed()
-        .setAuthor({
-          name: "Playlist added to queue",
-          iconURL: client.config.iconURL,
-        })
-        //.setAuthor("Playlist added to queue", client.config.iconURL)
-        .setThumbnail(res.tracks[0].thumbnail)
-        .setDescription(`[${res.playlist.name}](${query})`)
-        .addField("Enqueued", `\`${res.tracks.length}\` songs`, false)
-        .addField(
-          "Playlist duration",
-          `\`${client.ms(res.playlist.duration, {
-            colonNotation: true,
-          })}\``,
-          false
-        );
+        // .setAuthor({
+        //   name: "Playlist added to queue",
+        //   iconURL: client.config.iconURL,
+        // })
+        .setDescription(`Enqueued playlist [${res.playlist.name}](${query})`)
+        // .addField("Enqueued", `\`${res.tracks.length}\` songs`, false);
       return interaction
         .editReply({ embeds: [playlistEmbed] })
         .catch(this.warn);
