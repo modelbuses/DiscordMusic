@@ -27,12 +27,6 @@ Usually recived commit & fixes faster.
 > fine for hosting, but the pull requests and the online commit
 > editing, are just pure garbage.
 
-# tldr; of what can you do.
+This version doesn't have a dashboard, if you want the dashboard version consider using the main v5 branch https://github.com/sudhanplayz/discord-musicbot/tree/v5
 
-- The credits should not be changed.
-- The bot-code should be used for **private hosting** and **personal usage** only.
-- You should not use the bot for any commercial purpose. including but not limited to:
-  - Selling the bot's code.
-  - Putting the bot on listing site such as top.gg. discordbotlist.com. and such.
-
-> **Note:** if you are found to be violating any of the above stated rule you might be asked to takedown your bot, happy listening!! Incase of any doubts in the license contact owner.
+This repository serves as a repository for the bot "Model Buses". It's main philosophy is to make the bot that is both lightweight and reliable.
