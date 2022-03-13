@@ -26,3 +26,5 @@ Usually recived commit & fixes faster.
 This version doesn't have a dashboard, if you want the dashboard version consider using the main v5 branch https://github.com/sudhanplayz/discord-musicbot/tree/v5
 
 This repository serves as a repository for the bot "Model Buses". It's main philosophy is to make the bot that is both lightweight and reliable.
+
+_Darren Nathanael is not responsible for disapperance, death, or dismemberment._
