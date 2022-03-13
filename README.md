@@ -1,7 +1,3 @@
-# Repository
-
-[SudhanPlayz](https://github.com/SudhanPlayz/) [https://github.com/SudhanPlayz/Discord-MusicBot/](https://github.com/SudhanPlayz/Discord-MusicBot/)
-
 ## 🚀 | Deploy
 
 > Deploy for this version
