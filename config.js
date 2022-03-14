@@ -2,7 +2,6 @@ module.exports = {
   token: process.env.token || "", //Bot's Token
   clientId: process.env.clientId || "", //ID of the bot
   clientSecret: process.env.clientSecret || "", //Client Secret of the bot
-  port: 4200, //Port of the API and Dashboard
   scopes: ["identify", "guilds", "applications.commands"], //Discord OAuth2 Scopes
   serverDeafen: true, //If you want bot to stay deafened
   defaultVolume: 100, //Sets the default volume of the bot, You can change this number anywhere from 1 to 100
