@@ -22,6 +22,7 @@ const command = new SlashCommand()
         .trim();
     } catch (e) {
       // do nothing
+      console.log("ignore error about git.");
       gitHash = "unknown";
     }
 
@@ -33,21 +34,21 @@ const command = new SlashCommand()
         url: client.config.website,
       })
       .setColor(client.config.embedColor)
-      .setDescription(
+      .setDescription(`\`\`\`fix` + "\n" +
         filteredCommands
           .map((cmd) => {
-            return `\`/${cmd.name}\` - ${cmd.description}`;
+            return `${cmd.name}`;
           })
-          .join("\n") +
-          "\n\n" +
-          `Discord Music Bot Version: v${
+          .join(" • ") +
+          "\`\`\`\n" +
+          `Bot Version: v${
             require("../../package.json").version
           }; Build: ${gitHash}` +
           "\n" +
-          `[✨ Support Server](${client.config.supportServer}) | [Issues](${client.config.Issues}) | [Source](https://git.darrennathanael.com/DarrenOfficial/DiscordMusic/) | [Invite Me](https://discord.com/oauth2/authorize?client_id=${client.config.clientId}&permissions=${client.config.permissions}&scope=bot%20applications.commands)`
+          `[✨ Support Server](${client.config.supportServer}) | [Invite Me](https://discord.com/oauth2/authorize?client_id=${client.config.clientId}&permissions=${client.config.permissions}&scope=bot%20applications.commands)`
       );
     // Do not change the Source code link.
-    return interaction.reply({ embeds: [helpEmbed], ephemeral: true });
+    return interaction.reply({ embeds: [helpEmbed], ephemeral: false });
   });
 
 module.exports = command;
