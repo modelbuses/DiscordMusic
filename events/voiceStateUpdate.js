@@ -23,10 +23,10 @@ module.exports = async (client, oldState, newState) => {
   if (oldState.channel !== null && newState.channel !== null)
     stateChange.type = "MOVE";
   if (oldState.channel === null && newState.channel === null) return; // you never know, right
-  if (newState.serverMute == true && oldState.serverMute == false)
-    return player.pause(true);
+  if (newState.serverMute == true && oldState.serverMute == false) // !TODO: Prevent the bot from being muted if someone else is server muted. The way I patched (#766) is not the best way to do it since music is still playing if the bot is server muted.
+    return;
   if (newState.serverMute == false && oldState.serverMute == true)
-    return player.pause(false);
+    return;
   // move check first as it changes type
   if (stateChange.type === "MOVE") {
     if (oldState.channel.id === player.voiceChannel) stateChange.type = "LEAVE";
@@ -92,5 +92,5 @@ module.exports = async (client, oldState, newState) => {
         }
       }
       break;
-  }
+    }
 };
